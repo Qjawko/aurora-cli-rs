@@ -438,7 +438,7 @@ impl NearClient {
         Ok((block_hash, nonce))
     }
 
-    fn signer(&self) -> anyhow::Result<InMemorySigner> {
+    pub fn signer(&self) -> anyhow::Result<InMemorySigner> {
         std::env::var("NEAR_KEY_PATH")
             .ok()
             .as_ref()
